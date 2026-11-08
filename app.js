@@ -2,6 +2,13 @@ const $ = (s) => document.querySelector(s),
   root = document.documentElement;
 const dictionary = {
   ru: {
+    skipToContent: "Перейти к задачам",
+    navigation: "Основная навигация",
+    largeText: "Крупный текст",
+    largeTextHelp: "Увеличивает основной текст и подписи на 25%.",
+    highContrast: "Повышенный контраст",
+    highContrastHelp: "Убирает прозрачность и усиливает текст и границы.",
+    seoTitle: "Stepwise - список задач и календарь | Шаг за шагом",
     listLayout: "Список",
     calendarLayout: "Календарь",
     workspace: "Личное пространство",
@@ -68,6 +75,13 @@ const dictionary = {
     brand: "Шаг за шагом",
   },
   en: {
+    skipToContent: "Skip to content",
+    navigation: "Main navigation",
+    largeText: "Larger text",
+    largeTextHelp: "Increases body text and labels by 25%.",
+    highContrast: "Higher contrast",
+    highContrastHelp: "Removes transparency and strengthens text and borders.",
+    seoTitle: "Stepwise - task list and calendar",
     listLayout: "List",
     calendarLayout: "Calendar",
     workspace: "Personal workspace",
@@ -259,7 +273,8 @@ $("#toast button").onclick = () => {
 function render() {
   root.lang = lang;
   root.dataset.theme = theme;
-  document.title = `${t("brand")} · ${t("tasks")}`;
+  document.title = t("seoTitle");
+  $("#nav").setAttribute("aria-label", t("navigation"));
   $("#brand-name").textContent = t("brand");
   document
     .querySelectorAll("[data-t]")
@@ -363,23 +378,29 @@ function renderNavigation() {
     ["tasks", "today", "statistics", "settings"].indexOf(view),
   );
   $("#nav").replaceChildren();
-  [
-    ["tasks", "▦"],
-    ["today", "◷"],
-    ["statistics", "◴"],
-    ["settings", "⚙"],
-  ].forEach(([key, icon]) => {
+  ["tasks", "today", "statistics", "settings"].forEach((key) => {
     let b = button(
       "",
       t(key),
       () => changeView(key),
       view === key ? "selected" : "",
     );
-    b.append(el("span", "nav-icon", icon), el("span", "nav-label", t(key)));
+    const mark = el("span", "nav-icon");
+    const paths = {
+      tasks: "M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z",
+      today: "M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16 M12 7v5h4",
+      statistics: "M4 4v16h16 M8 16v-5 M13 16V7 M18 16v-7",
+      settings:
+        "M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8 M12 2v3 M12 19v3 M2 12h3 M19 12h3 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2",
+    };
+    mark.append(UI.icon(paths[key]));
+    b.append(mark, el("span", "nav-label", t(key)));
+    b.querySelector(".nav-icon").setAttribute("aria-hidden", "true");
     if (key === "tasks")
       b.append(
         el("span", "count", String(tasks.filter((t) => !t.done).length)),
       );
+    b.removeAttribute("aria-label");
     b.setAttribute("aria-current", view === key ? "page" : "false");
     $("#nav").append(b);
   });
@@ -401,6 +422,12 @@ function inCurrentView(task) {
 }
 function renderList() {
   const list = $("#list");
+  const focused = document.activeElement;
+  const focusedRow = focused?.closest?.(".task");
+  const focusedId = focusedRow?.dataset.id;
+  const focusedIndex = focusedRow
+    ? [...focusedRow.querySelectorAll("button,input")].indexOf(focused)
+    : -1;
   list.replaceChildren();
   const visible = tasks
     .filter(
@@ -414,6 +441,15 @@ function renderList() {
       (a, b) =>
         Number(b.star) - Number(a.star) || b.created.localeCompare(a.created),
     );
+  $("#task-status").textContent = `${t("myTasks")}: ${visible.length}`;
+  if (focusedId && !editing)
+    requestAnimationFrame(() => {
+      const rows = [...list.querySelectorAll(".task")];
+      const row = rows.find((item) => item.dataset.id === focusedId) || rows[0];
+      const control =
+        row?.querySelectorAll("button,input")[Math.max(0, focusedIndex)];
+      (control || $("#new-task")).focus();
+    });
   if (!visible.length) {
     const empty = el("div", "empty");
     empty.append(
@@ -578,6 +614,12 @@ function renderList() {
       }),
     );
     row.append(check, copy, actions);
+    actions.querySelectorAll("button").forEach((control) => {
+      control.setAttribute(
+        "aria-label",
+        `${control.getAttribute("aria-label")}: ${task.title}`,
+      );
+    });
     list.append(row);
   });
 }
@@ -824,6 +866,14 @@ function syncControls() {
     theme === "dark" ? "lightTheme" : "darkTheme",
   );
   $("#settings-language").textContent = lang === "ru" ? "English" : "Русский";
+  $("#settings-theme").setAttribute(
+    "aria-label",
+    `${t("theme")}: ${$("#settings-theme").textContent}`,
+  );
+  $("#settings-language").setAttribute(
+    "aria-label",
+    `${t("language")}: ${$("#settings-language").textContent}`,
+  );
 }
 $("#language-ru").onclick = () => switchLanguage("ru");
 $("#language-en").onclick = () => switchLanguage("en");
@@ -836,6 +886,17 @@ $("#compact").onchange = (e) => {
   document.body.classList.toggle("compact", e.target.checked);
   persist("stepwise-compact", e.target.checked);
 };
+for (const setting of ["large-text", "high-contrast"]) {
+  const control = $("#" + setting);
+  control.checked = read("stepwise-" + setting, false) === true;
+  root.classList.toggle(setting, control.checked);
+  document.body.classList.toggle(setting, control.checked);
+  control.onchange = () => {
+    root.classList.toggle(setting, control.checked);
+    document.body.classList.toggle(setting, control.checked);
+    persist("stepwise-" + setting, control.checked);
+  };
+}
 let lastDay = today();
 setInterval(() => {
   if (today() !== lastDay) {

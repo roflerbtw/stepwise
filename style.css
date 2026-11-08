@@ -21,7 +21,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-size: 14px;
+  font-size: 0.875rem;
   min-height: 100vh;
 }
 button,
@@ -114,7 +114,7 @@ aside {
 }
 #brand-name {
   font-weight: 650;
-  font-size: 18px;
+  font-size: 1.125rem;
   white-space: nowrap;
   letter-spacing: -0.7px;
 }
@@ -156,13 +156,13 @@ nav button.selected {
   color: var(--accent);
 }
 nav .nav-icon {
-  font-size: 20px;
+  font-size: 1.25rem;
   width: 22px;
 }
 nav .count {
   margin-left: auto;
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   background: #a78bfa20;
   padding: 2px 6px;
 }
@@ -248,7 +248,7 @@ main {
   border-radius: 50%;
 }
 h1 {
-  font-size: 34px;
+  font-size: 2.125rem;
   letter-spacing: -1.3px;
   margin: 13px 0 10px;
   font-weight: 650;
@@ -311,17 +311,17 @@ p {
   position: absolute;
   inset: 0;
   place-content: center;
-  font-size: 26px;
+  font-size: 1.625rem;
   display: flex;
   align-items: center;
 }
 .ring strong span {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin: 5px 0 0 2px;
   color: var(--muted);
 }
 h2 {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: -0.4px;
 }
@@ -345,7 +345,7 @@ h2 {
 .metric-icon {
   display: grid;
   place-items: center;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .purple {
   color: #b19afa;
@@ -394,7 +394,7 @@ h2 {
   box-shadow: 0 0 20px #a58aff04;
 }
 .input-plus {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--accent);
 }
 #new-task {
@@ -419,7 +419,7 @@ h2 {
   border: 0;
   background: none;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .date-add:focus-within input,
 .date-add:hover input {
@@ -456,7 +456,7 @@ h2 {
   color: var(--muted);
 }
 .search span {
-  font-size: 23px;
+  font-size: 1.4375rem;
 }
 .search input {
   width: 100%;
@@ -526,7 +526,7 @@ h2 {
 .task-actions button {
   color: var(--muted);
   padding: 0;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .task-actions button:hover {
   background: #a58aff15;
@@ -561,7 +561,7 @@ h2 {
   padding: 43px 15px;
 }
 .empty .empty-symbol {
-  font-size: 35px;
+  font-size: 2.1875rem;
   color: var(--accent);
   margin-bottom: 12px;
 }
@@ -598,7 +598,7 @@ footer {
 }
 .settings p,
 #details {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 2.4;
   color: var(--muted);
 }
@@ -615,7 +615,7 @@ footer {
   box-shadow: var(--shadow);
   display: flex;
   gap: 24px;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 #toast button {
   color: var(--accent);
@@ -754,7 +754,7 @@ html[data-theme="light"] .ambient {
     gap: 6px 12px;
   }
   .metric strong {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 700px) {
@@ -786,7 +786,7 @@ html[data-theme="light"] .ambient {
     box-shadow: none;
   }
   nav .nav-icon {
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
   }
   nav .count {
@@ -809,7 +809,7 @@ html[data-theme="light"] .ambient {
     height: 68px;
   }
   .metric-icon {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .panel-title {
     margin-bottom: 17px;
@@ -948,58 +948,58 @@ html[data-theme="dark"] .moon-icon {
   margin: 0 auto 10px;
 }
 .companion strong {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.55;
   max-width: 190px;
   margin: 0 auto;
   text-wrap: balance;
 }
 .companion p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.7;
   margin: 10px auto 0;
   max-width: 190px;
   text-wrap: balance;
 }
 .workspace-label {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 1.2px;
 }
 nav button {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .breadcrumb {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .eyebrow {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .progress-card p {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .pill {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 #new-task {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .primary {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .filters button {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .search {
   width: 210px;
 }
 .search input {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .task-title {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .empty h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .progress-card {
   min-width: 0;
@@ -1026,25 +1026,25 @@ nav button {
     padding-inline: 14px;
   }
   .breadcrumb {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .breadcrumb > span:first-child {
     display: none;
   }
   nav button {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .metric {
     padding-inline: 10px;
   }
   .filters button {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .search {
     width: 100%;
   }
   footer {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 }
 nav {
@@ -1081,20 +1081,20 @@ nav button:hover {
   transform: translateX(2px);
 }
 .settings {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .settings h2,
 .panel-title h2,
 .progress-card h2 {
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
 .settings .quiet {
-  font-size: 15px;
+  font-size: 0.9375rem;
   min-height: 44px;
   min-width: 145px;
 }
 .settings p {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .compact-switch {
   appearance: none;
@@ -1136,28 +1136,28 @@ nav button:hover {
 }
 .task-title,
 #new-task {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .intro p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .filters button,
 .search input,
 .primary {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .task-meta,
 .progress-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .panel-footer {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .empty p {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .metric > span:last-child {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 @media (max-width: 700px) {
   nav {
@@ -1175,14 +1175,14 @@ nav button:hover {
   }
   .task-title,
   #new-task {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .settings {
-    font-size: 15px;
+    font-size: 0.9375rem;
     padding: 20px;
   }
   .panel-footer {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 .search svg {
@@ -1260,7 +1260,7 @@ nav button:hover {
   .date-add:focus-within input {
     width: 150px;
     min-height: 32px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .primary span {
     display: inline;
@@ -1309,7 +1309,7 @@ nav button:hover {
   border-radius: 9px;
   background: var(--panel);
   border: 1px solid var(--line);
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 .calendar-week,
 .calendar-grid {
@@ -1319,7 +1319,7 @@ nav button:hover {
 }
 .calendar-week {
   text-align: center;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted);
   margin-bottom: 9px;
 }
@@ -1327,7 +1327,7 @@ nav button:hover {
   height: 35px;
   border-radius: 9px;
   background: transparent;
-  font-size: 13px;
+  font-size: 0.8125rem;
   border: 1px solid transparent;
 }
 .calendar-day:hover {
@@ -1355,14 +1355,14 @@ nav button:hover {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .calendar-actions button:first-child {
   color: var(--accent);
 }
 .calendar-actions button:last-child {
   margin-left: auto;
-  font-size: 20px;
+  font-size: 1.25rem;
   padding-inline: 12px;
 }
 .metric {
@@ -1386,7 +1386,7 @@ nav button:hover {
   stroke-linejoin: round;
 }
 .metric strong {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 .task-actions {
   gap: 7px;
@@ -1433,24 +1433,24 @@ nav button:hover {
   height: 20px;
 }
 .task-meta {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 .edit-date {
   min-height: 44px;
-  font-size: 14px;
+  font-size: 0.875rem;
   max-width: 155px;
 }
 .due-help {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .date-add > span {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .date-add input,
 .date-add:hover input,
 .date-add:focus-within input {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .companion {
   padding-bottom: 16px;
@@ -1462,8 +1462,7 @@ main {
 }
 footer {
   justify-content: flex-end;
-  opacity: 0.5;
-  font-size: 10px;
+  font-size: 0.625rem;
   padding-top: 32px;
   margin-top: auto;
 }
@@ -1496,13 +1495,13 @@ footer {
     margin-left: auto;
   }
   .task-meta {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .task.editing .edit-input {
     flex-basis: 100%;
   }
   .due-help {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .edit-date {
     max-width: 150px;
@@ -1519,7 +1518,7 @@ footer {
   border: 1px solid #a58aff25;
   border-radius: 7px;
   padding: 3px 9px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
 }
 .due-countdown.overdue {
@@ -1543,7 +1542,7 @@ footer {
   border-radius: 9px;
   background: #a58aff15;
   color: var(--accent);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
 }
 .clear-button svg {
@@ -1596,12 +1595,12 @@ footer {
     align-items: flex-start;
   }
   h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 1.2;
     letter-spacing: -0.8px;
   }
   .intro p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .overview {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1614,7 +1613,7 @@ footer {
     min-height: 92px;
   }
   .progress-card h2 {
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0 0 6px;
   }
   .metric {
@@ -1630,7 +1629,7 @@ footer {
     min-height: 76px;
   }
   .metric strong {
-    font-size: 24px;
+    font-size: 1.5rem;
     grid-column: 2;
     grid-row: 1;
   }
@@ -1638,7 +1637,7 @@ footer {
     overflow-wrap: anywhere;
     grid-column: 1 / -1;
     grid-row: 2;
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .task-panel {
     padding: 16px 10px;
@@ -1646,7 +1645,7 @@ footer {
   #new-task,
   .edit-input,
   .search input {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .search {
     min-height: 44px;
@@ -1681,7 +1680,7 @@ footer {
     margin-top: 2px;
   }
   .task-title {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .task-meta {
     display: flex;
@@ -1690,10 +1689,10 @@ footer {
     gap: 6px;
   }
   .due-date {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .due-countdown {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .task.editing {
     grid-template-columns: minmax(0, 1fr) 44px 44px;
@@ -1706,7 +1705,7 @@ footer {
     width: 100%;
     min-width: 0;
     max-width: none;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .panel-footer {
     flex-direction: column;
@@ -1715,10 +1714,10 @@ footer {
   }
   .clear-button {
     width: 100%;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .panel-footer > span {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .settings .quiet {
     padding-inline: 10px;
@@ -1761,7 +1760,7 @@ footer {
   }
   .primary {
     padding-inline: 10px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .settings {
     padding: 16px;
@@ -1934,21 +1933,21 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 1.5rem;
   background: var(--panel);
   color: var(--muted);
 }
 .support-symbol {
-  font-size: 36px;
+  font-size: 2.25rem;
   color: var(--accent);
   margin: 12px 0;
 }
 .support-dialog h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 12px 0;
 }
 .support-dialog p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
 }
 .telegram-link {
@@ -1982,7 +1981,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
 }
 .support-dialog small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .nav-label {
   display: inline-block;
@@ -2090,7 +2089,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   border-radius: 9px;
   background: var(--field);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .layout-tabs button[aria-pressed="true"] {
   background: #a58aff25;
@@ -2119,7 +2118,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   height: 44px;
   border-radius: 9px;
   background: var(--panel);
-  font-size: 25px;
+  font-size: 1.5625rem;
   border: 1px solid var(--line);
 }
 .planner-grid {
@@ -2130,7 +2129,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
 .planner-weekday {
   text-align: center;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   padding-bottom: 7px;
 }
 .planner-day {
@@ -2140,7 +2139,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--panel);
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2165,12 +2164,12 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   height: 19px;
   display: grid;
   place-items: center;
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .planner-summary > span {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 400;
   margin-top: 7px;
 }
@@ -2191,7 +2190,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   background: #a58aff22;
 }
 .telegram-link {
-  font-size: 16px;
+  font-size: 1rem;
   min-height: 54px;
 }
 .robot-hint {
@@ -2201,7 +2200,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   bottom: 155px;
   width: 240px;
   padding: 17px 19px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.5;
   text-align: left;
   z-index: 35;
@@ -2242,24 +2241,24 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   .planner-day {
     min-height: 47px;
     padding: 4px;
-    font-size: 14px;
+    font-size: 0.875rem;
     flex-direction: column;
     gap: 3px;
   }
   .planner-count {
     width: 14px;
     height: 14px;
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
   .planner-head h3 {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .companion > .robot-hint {
     display: block;
     left: auto;
     right: 16px;
     width: min(260px, calc(100vw - 32px));
-    font-size: 14px;
+    font-size: 0.875rem;
     bottom: calc(86px + env(safe-area-inset-bottom));
   }
   .robot-hint:before {
@@ -2289,11 +2288,11 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   stroke-linejoin: round;
 }
 .planner-composer > strong {
-  font-size: 17px;
+  font-size: 1.0625rem;
   text-transform: capitalize;
 }
 .planner-composer > p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   margin: 7px 0 12px;
 }
 .planner-add {
@@ -2308,7 +2307,7 @@ html[data-theme="dark"] .theme-toggle .theme-thumb {
   padding: 12px;
   border-radius: 9px;
   color: var(--text);
-  font-size: 16px;
+  font-size: 1rem;
 }
 .planner-add .primary {
   min-height: 44px;
@@ -2351,7 +2350,7 @@ html[data-theme="light"] .mint {
     width: 100%;
   }
   .planner-composer > strong {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 .calendar-header {
@@ -2383,7 +2382,7 @@ html[data-theme="light"] .mint {
 }
 .calendar-header strong {
   line-height: 1.4;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 @media (max-width: 700px) {
   .planner-composer {
@@ -2480,7 +2479,7 @@ html[data-theme="light"] .mint {
   font-weight: 550;
 }
 .setting-copy small {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.6;
   color: var(--muted);
   font-weight: 400;
@@ -2508,7 +2507,7 @@ html[data-theme="light"] .mint {
     display: none;
   }
   .breadcrumb b {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.35;
     font-weight: 600;
     white-space: normal;
@@ -2548,16 +2547,16 @@ html[data-theme="light"] .mint {
     flex: 1;
   }
   .setting-copy > span {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .setting-copy small {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.55;
   }
   .settings .quiet {
     min-width: 112px;
     max-width: 130px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .compact .task {
     padding-block: 8px;
@@ -2579,7 +2578,7 @@ html[data-theme="light"] .mint {
     gap: 5px;
   }
   .breadcrumb b {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .controls {
     gap: 5px;
@@ -2595,7 +2594,7 @@ html[data-theme="light"] .mint {
   }
   .settings .quiet {
     min-width: 100px;
-    font-size: 12px;
+    font-size: 0.75rem;
     padding-inline: 8px;
   }
 }
@@ -2612,7 +2611,7 @@ html[data-theme="light"] .mint {
   }
   .mobile-brand-title {
     display: block;
-    font-size: 15px;
+    font-size: 0.9375rem;
     letter-spacing: -0.5px;
     line-height: 1.25;
     font-weight: 650;
@@ -2620,7 +2619,7 @@ html[data-theme="light"] .mint {
   }
   .breadcrumb > b {
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 550;
     line-height: 1.5;
     color: var(--muted);
@@ -2646,7 +2645,7 @@ html[data-theme="light"] .mint {
     height: 18px;
   }
   .language-flags > span {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .theme-toggle {
     --toggle-width: 76px;
@@ -2665,7 +2664,7 @@ html[data-theme="light"] .mint {
     column-gap: 7px;
   }
   .mobile-brand-title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     max-width: 85px;
   }
   .controls {
@@ -2706,7 +2705,7 @@ header > .mobile-brand-group {
   }
   header > .mobile-brand-group .mobile-brand-title {
     display: block;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 650;
     line-height: 1.25;
     letter-spacing: -0.5px;
@@ -2733,35 +2732,35 @@ header > .mobile-brand-group {
     height: 27px;
   }
   header > .mobile-brand-group .mobile-brand-title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     max-width: 90px;
   }
 }
 @media (min-width: 701px) {
   .workspace-label {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.5;
     letter-spacing: 0.8px;
     margin-left: 10px;
     margin-right: 0;
   }
   nav button {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 500;
   }
   nav .nav-icon {
-    font-size: 24px;
+    font-size: 1.5rem;
     width: 25px;
   }
   nav .count {
-    font-size: 13px;
+    font-size: 0.8125rem;
     padding: 3px 7px;
   }
   .breadcrumb {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .eyebrow {
-    font-size: 16px;
+    font-size: 1rem;
     gap: 11px;
     line-height: 1.6;
   }
@@ -2829,12 +2828,12 @@ header > .mobile-brand-group {
 }
 @media (max-width: 700px) {
   .ring strong {
-    font-size: 23px;
+    font-size: 1.4375rem;
   }
 }
 @media (max-width: 700px) {
   .progress-card p {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 }
@@ -2858,4 +2857,134 @@ header > .mobile-brand-group {
   #add-form .primary {
     white-space: nowrap;
   }
+}
+
+html.large-text {
+  font-size: 125%;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 12px;
+  left: 12px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--accent);
+  transform: translateY(-180%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+body.high-contrast {
+  --bg: #101018;
+  --panel: #1c1b29;
+  --field: #101018;
+  --text: #ffffff;
+  --muted: #e1dcea;
+  --line: #aaa0bc;
+  --accent: #c7b7ff;
+}
+html[data-theme="light"] body.high-contrast {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --field: #ffffff;
+  --text: #15101d;
+  --muted: #352a43;
+  --line: #6b5b7e;
+  --accent: #59308c;
+}
+.high-contrast .ambient {
+  display: none;
+}
+.high-contrast
+  :is(
+    .glass,
+    .task,
+    .calendar-dialog,
+    .support-dialog,
+    .planner-composer,
+    .robot-hint
+  ) {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.high-contrast
+  :is(.due-countdown, .planner-weekday, .setting-copy small, .task-meta) {
+  color: var(--muted);
+}
+.high-contrast :is(.primary, .telegram-link) {
+  background: #63419b;
+  color: #ffffff;
+}
+.high-contrast .task.done .task-title {
+  opacity: 1;
+}
+.high-contrast :is(button:focus-visible, a:focus-visible, input:focus-visible) {
+  outline-width: 3px;
+}
+.large-text .settings label {
+  gap: 20px;
+}
+@media (max-width: 700px) {
+  .large-text .metric {
+    padding-inline: 3px;
+    column-gap: 4px;
+  }
+  .large-text .mobile-brand-group {
+    min-width: 0;
+  }
+  .large-text .mobile-brand-name {
+    white-space: normal;
+  }
+  .large-text .settings label {
+    flex-wrap: wrap;
+  }
+  .large-text .toolbar {
+    flex-wrap: wrap;
+  }
+  .large-text .panel-footer {
+    flex-wrap: wrap;
+  }
+}
+@media (forced-colors: active) {
+  :is(
+    .glass,
+    .task,
+    .theme-toggle,
+    .compact-switch,
+    .planner-day,
+    .calendar-day
+  ) {
+    border: 1px solid ButtonText;
+  }
+  :is(button, a, input):focus-visible {
+    outline: 3px solid Highlight;
+  }
+  :is(.planner-day.selected, .calendar-day.selected, .filters .selected) {
+    outline: 2px solid Highlight;
+  }
+}
+
+.nav-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

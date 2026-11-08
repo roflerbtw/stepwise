@@ -4,11 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#141222" />
-    <title>Шаг за шагом · Stepwise</title>
+    <title>Stepwise - список задач и календарь | Шаг за шагом</title>
+    <meta
+      name="description"
+      content="Stepwise - бесплатный список задач с календарём, сроками и статистикой. Русский и английский языки, светлая и тёмная темы. Задачи сохраняются в вашем браузере."
+    />
+    <link rel="canonical" href="https://roflerbtw.github.io/stepwise/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stepwise" />
+    <meta property="og:title" content="Stepwise - список задач и календарь" />
+    <meta
+      property="og:description"
+      content="Планируйте задачи и сроки, отмечайте выполненное и следите за прогрессом. Без регистрации, с хранением задач в браузере."
+    />
+    <meta property="og:url" content="https://roflerbtw.github.io/stepwise/" />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" href="favicon.svg" />
-    <link rel="stylesheet" href="style.css?v=20261108-theme" />
+    <link rel="stylesheet" href="style.css?v=20261108-accessibility" />
   </head>
   <body>
+    <a class="skip-link" href="#main" data-t="skipToContent"
+      >Перейти к задачам</a
+    >
     <div class="ambient"></div>
     <aside>
       <a class="brand" href="#tasks"
@@ -31,7 +48,7 @@
         ><span id="brand-name"></span
       ></a>
       <div class="workspace-label" data-t="workspace"></div>
-      <nav id="nav"></nav>
+      <nav id="nav" aria-label="Основная навигация"></nav>
       <div class="companion">
         <button
           id="robot-help"
@@ -181,18 +198,27 @@
           </button>
         </div>
       </header>
-      <main>
+      <main id="main" tabindex="-1">
+        <noscript
+          ><p class="glass">
+            Stepwise - список задач с календарём и сроками. Для добавления и
+            сохранения задач включите JavaScript. Данные хранятся только в вашем
+            браузере.
+          </p></noscript
+        >
         <section class="intro">
           <div>
             <div class="eyebrow"><span></span><span id="date"></span></div>
-            <h1 id="heading"></h1>
-            <p id="subtitle"></p>
+            <h1 id="heading">Каждый шаг имеет значение.</h1>
+            <p id="subtitle">
+              Общий список задач с календарём и сроками выполнения.
+            </p>
           </div>
         </section>
         <section class="overview" id="overview">
           <div class="progress-card glass">
             <div class="ring">
-              <svg viewBox="0 0 110 110">
+              <svg viewBox="0 0 110 110" aria-hidden="true">
                 <defs>
                   <linearGradient id="progress-gradient">
                     <stop stop-color="#a58aff" />
@@ -271,7 +297,13 @@
               ><input id="search" data-placeholder="search" type="search"
             /></label>
           </div>
-          <div id="list" aria-live="polite"></div>
+          <div id="list"></div>
+          <p
+            id="task-status"
+            class="sr-only"
+            role="status"
+            aria-atomic="true"
+          ></p>
           <div class="panel-footer">
             <span id="remaining"></span
             ><button id="clear" class="clear-button" type="button">
@@ -303,6 +335,26 @@
               ><small data-t="compactHelp"></small></span
             ><input
               id="compact"
+              class="compact-switch"
+              type="checkbox"
+              role="switch"
+          /></label>
+          <label
+            ><span class="setting-copy"
+              ><span data-t="largeText"></span
+              ><small data-t="largeTextHelp"></small></span
+            ><input
+              id="large-text"
+              class="compact-switch"
+              type="checkbox"
+              role="switch"
+          /></label>
+          <label
+            ><span class="setting-copy"
+              ><span data-t="highContrast"></span
+              ><small data-t="highContrastHelp"></small></span
+            ><input
+              id="high-contrast"
               class="compact-switch"
               type="checkbox"
               role="switch"
