@@ -33,7 +33,7 @@ function boot(data = {}) {
   const context = vm.createContext({
     document: {
       querySelector: get,
-      documentElement: { lang: "", dataset: {}, style: { setProperty() {} } },
+      documentElement: { ...node(), lang: "", dataset: {} },
       body: node(),
       addEventListener() {},
       createElement: node,

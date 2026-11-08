@@ -1,6 +1,7 @@
 import { JSDOM, VirtualConsole } from "jsdom";
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
+import axe from "axe-core";
 const errors = [];
 const consoleOutput = new VirtualConsole();
 consoleOutput.on("jsdomError", (error) => errors.push(error.message));
@@ -13,6 +14,7 @@ const dom = new JSDOM(html, {
 });
 const { window } = dom;
 window.scrollTo = () => {};
+window.HTMLCanvasElement.prototype.getContext = () => null;
 window.matchMedia = () => ({ matches: false, addEventListener() {} });
 window.Element.prototype.scrollIntoView = function () {};
 window.Element.prototype.animate = function (frames, options) {
@@ -89,7 +91,10 @@ try {
       (n) => n.textContent === "Исправленное название",
     ),
   );
+  $(".check").focus();
   click(".check");
+  await new Promise(window.requestAnimationFrame);
+  assert.ok(window.document.activeElement.matches(".check"));
   assert.equal($("#completed").textContent, "1");
   click("#clear");
   assert.equal(window.document.querySelectorAll(".task").length, 1);
@@ -116,6 +121,33 @@ try {
   const saved = JSON.parse(window.localStorage.getItem("stepwise-tasks"));
   assert.equal(saved.length, 2);
   assert.ok(saved.some((task) => task.due === date));
+  for (const id of ["large-text", "high-contrast"]) {
+    click("#" + id);
+    assert.ok(window.document.documentElement.classList.contains(id));
+    assert.equal(window.localStorage.getItem("stepwise-" + id), "true");
+  }
+  assert.ok(
+    $("#settings-theme").getAttribute("aria-label").includes("Dark theme"),
+  );
+  assert.equal($(".skip-link").getAttribute("href"), "#main");
+  const axeScript = window.document.createElement("script");
+  axeScript.textContent = axe.source;
+  window.document.body.append(axeScript);
+  for (const target of ["settings", "tasks", "today", "statistics"]) {
+    const index = ["tasks", "today", "statistics", "settings"].indexOf(target);
+    click(`#nav button:nth-child(${index + 1})`);
+    const report = await window.axe.run(window.document, {
+      rules: { "color-contrast": { enabled: false } },
+    });
+    assert.deepEqual(
+      Array.from(report.violations, (v) => ({
+        id: v.id,
+        nodes: v.nodes.map((n) => n.target),
+      })),
+      [],
+      `Accessibility: ${target}`,
+    );
+  }
   assert.deepEqual(errors, []);
   console.log(
     "DOM integration passed: real startup, shared task forms, calendar open/close, no animation replay, editing, completion, undo, dialogs, localization, navigation, theme, persistence.",

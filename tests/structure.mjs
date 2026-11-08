@@ -5,6 +5,20 @@ import assert from "node:assert/strict";
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const dom = new JSDOM(html);
 const { document } = dom.window;
+assert.match(document.title, /Stepwise/);
+assert.ok(
+  document.querySelector('meta[name="description"]').content.length > 80,
+);
+assert.equal(
+  document.querySelector('link[rel="canonical"]').href,
+  "https://roflerbtw.github.io/stepwise/",
+);
+assert.ok(document.querySelector("h1").textContent.trim());
+assert.ok(
+  readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8").includes(
+    "https://roflerbtw.github.io/stepwise/",
+  ),
+);
 const ids = [...document.querySelectorAll("[id]")].map((n) => n.id);
 assert.equal(new Set(ids).size, ids.length, "Duplicate HTML IDs");
 for (const element of document.querySelectorAll("[src],link[href]")) {
