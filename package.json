@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "postcss": "^8.5.32",
+    "prettier": "^3.9.10"
+  },
+  "name": "stepwise",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node tests/core.mjs && node tests/dom.mjs && node tests/structure.mjs",
+    "format": "prettier --write index.html style.css ui.js app.js calendar.js planner.js support.js scripts tests",
+    "check": "node --check ui.js && node --check app.js && node --check calendar.js && node --check planner.js && node --check support.js && prettier --check index.html style.css ui.js app.js calendar.js planner.js support.js scripts tests"
+  }
+}

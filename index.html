@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#141222" />
+    <title>Шаг за шагом · Stepwise</title>
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <aside>
+      <a class="brand" href="#tasks"
+        ><svg viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="brand">
+              <stop stop-color="#a78bfa" />
+              <stop offset="1" stop-color="#50e4cd" />
+            </linearGradient>
+          </defs>
+          <g
+            fill="none"
+            stroke="url(#brand)"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M35 11H20a7 7 0 0 0 0 14h8a6 6 0 0 1 0 12H13" />
+          </g></svg
+        ><span id="brand-name"></span
+      ></a>
+      <div class="workspace-label" data-t="workspace"></div>
+      <nav id="nav"></nav>
+      <div class="companion">
+        <button
+          id="robot-help"
+          type="button"
+          class="robot-help"
+          aria-label="Поддержка"
+        >
+          <svg viewBox="0 0 160 140" aria-hidden="true">
+            <ellipse
+              cx="80"
+              cy="124"
+              rx="38"
+              ry="6"
+              fill="#8874ee"
+              opacity=".15"
+            />
+            <g class="robot">
+              <path d="M80 30V17" stroke="#a899fa" stroke-width="3" />
+              <circle cx="80" cy="15" r="5" fill="#5ee3d0" />
+              <rect
+                x="36"
+                y="32"
+                width="88"
+                height="65"
+                rx="25"
+                fill="#8175bc"
+              />
+              <rect
+                x="43"
+                y="39"
+                width="74"
+                height="47"
+                rx="20"
+                fill="#242236"
+              />
+              <g fill="#62e4d2" class="eyes">
+                <rect x="58" y="52" width="9" height="16" rx="4" />
+                <rect x="93" y="52" width="9" height="16" rx="4" />
+              </g>
+              <path
+                d="M69 76q11 7 22 0"
+                fill="none"
+                stroke="#b3a2fa"
+                stroke-width="2"
+              />
+              <path
+                d="M55 101q25 17 50 0"
+                fill="none"
+                stroke="#8175bc"
+                stroke-width="9"
+                stroke-linecap="round"
+              />
+            </g>
+          </svg></button
+        ><button
+          id="robot-hint"
+          type="button"
+          class="robot-hint"
+          tabindex="-1"
+          aria-hidden="true"
+        ></button
+        ><strong data-t="smallSteps"></strong>
+        <p data-t="robotText"></p>
+      </div>
+    </aside>
+    <div class="shell">
+      <header>
+        <a class="mobile-brand-group" href="#tasks"
+          ><svg class="mobile-brand" viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <linearGradient id="mobile-brand-gradient">
+                <stop stop-color="#a78bfa" />
+                <stop offset="1" stop-color="#50e4cd" />
+              </linearGradient>
+            </defs>
+            <g
+              fill="none"
+              stroke="url(#mobile-brand-gradient)"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M35 11H20a7 7 0 0 0 0 14h8a6 6 0 0 1 0 12H13" />
+            </g></svg
+          ><span class="mobile-brand-title" data-t="brand"></span
+        ></a>
+        <div class="breadcrumb">
+          <span data-t="workspace"></span><span>/</span><b id="crumb"></b>
+        </div>
+        <div class="controls">
+          <div
+            id="language"
+            class="language-flags"
+            role="group"
+            aria-label="Язык"
+          >
+            <button
+              id="language-ru"
+              type="button"
+              aria-label="Русский"
+              title="Русский"
+            >
+              <svg viewBox="0 0 30 20" aria-hidden="true">
+                <path fill="#fff" d="M0 0h30v20H0z" />
+                <path fill="#2154c7" d="M0 6.67h30v6.67H0z" />
+                <path fill="#df3a44" d="M0 13.33h30V20H0z" />
+              </svg></button
+            ><span aria-hidden="true">|</span
+            ><button
+              id="language-en"
+              type="button"
+              aria-label="English"
+              title="English"
+            >
+              <svg viewBox="0 0 30 20" aria-hidden="true">
+                <path fill="#fff" d="M0 0h30v20H0z" />
+                <path
+                  stroke="#d84655"
+                  stroke-width="2"
+                  d="M0 1h30M0 5h30M0 9h30M0 13h30M0 17h30"
+                />
+                <path fill="#304775" d="M0 0h14v11H0z" />
+                <path
+                  fill="#fff"
+                  d="M3 2h2v2H3zm5 0h2v2H8zM3 6h2v2H3zm5 0h2v2H8z"
+                />
+              </svg>
+            </button>
+          </div>
+          <span class="divider"></span
+          ><button
+            id="theme"
+            class="theme-toggle"
+            type="button"
+            role="switch"
+            aria-label="Theme"
+          >
+            <span class="theme-thumb" aria-hidden="true"></span
+            ><svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+              /></svg
+            ><svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 15.5A8.8 8.8 0 018.5 4 8.8 8.8 0 1020 15.5Z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <main>
+        <section class="intro">
+          <div>
+            <div class="eyebrow"><span></span><span id="date"></span></div>
+            <h1 id="heading"></h1>
+            <p id="subtitle"></p>
+          </div>
+        </section>
+        <section class="overview" id="overview">
+          <div class="progress-card glass">
+            <div class="ring">
+              <svg viewBox="0 0 110 110">
+                <defs>
+                  <linearGradient id="progress-gradient">
+                    <stop stop-color="#a58aff" />
+                    <stop offset="1" stop-color="#5ce3cf" />
+                  </linearGradient>
+                </defs>
+                <circle class="track" cx="55" cy="55" r="46" />
+                <circle id="arc" cx="55" cy="55" r="46" /></svg
+              ><strong id="percent">0<span>%</span></strong>
+            </div>
+            <div>
+              <h2 data-t="yourProgress"></h2>
+              <p id="progress-text"></p>
+            </div>
+            <span class="sparkle">✦</span>
+          </div>
+          <div class="metric glass">
+            <span class="metric-icon purple"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h14v16H5z M8 8h8 M8 12h8 M8 16h5" /></svg></span
+            ><strong id="total">0</strong><span data-t="total"></span>
+          </div>
+          <div class="metric glass">
+            <span class="metric-icon amber"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 7v5l3 2" /></svg></span
+            ><strong id="active">0</strong><span data-t="active"></span>
+          </div>
+          <div class="metric glass">
+            <span class="metric-icon mint"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 12 4 4 8-8" /></svg></span
+            ><strong id="completed">0</strong><span data-t="completed"></span>
+          </div>
+        </section>
+        <section id="tasks-view" class="task-panel glass">
+          <div class="panel-title">
+            <h2 data-t="myTasks"></h2>
+            <span id="task-count" class="pill"></span>
+          </div>
+          <form id="add-form">
+            <span class="input-plus">＋</span
+            ><input
+              id="new-task"
+              maxlength="180"
+              autocomplete="off"
+              data-placeholder="newTask"
+              required
+            /><label class="date-add" for="new-date"
+              ><span data-t="dueOptional"></span
+              ><input
+                type="date"
+                id="new-date"
+                aria-describedby="due-help" /></label
+            ><button class="primary" type="submit">
+              <span data-t="add"></span> ＋
+            </button>
+          </form>
+          <p id="due-help" class="due-help"></p>
+          <div id="task-layout-tabs" class="layout-tabs">
+            <button id="layout-list" type="button" data-t="listLayout"></button
+            ><button
+              id="layout-calendar"
+              type="button"
+              data-t="calendarLayout"
+            ></button>
+          </div>
+          <section id="planner" aria-label="Календарь" hidden></section>
+          <div class="toolbar">
+            <div id="filters" class="filters"></div>
+            <label class="search"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.5" cy="10.5" r="6.5" />
+                <path d="m15.5 15.5 4.5 4.5" /></svg
+              ><input id="search" data-placeholder="search" type="search"
+            /></label>
+          </div>
+          <div id="list" aria-live="polite"></div>
+          <div class="panel-footer">
+            <span id="remaining"></span
+            ><button id="clear" class="clear-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 10v7M14 10v7"
+                /></svg
+              ><span data-t="clearCompleted"></span>
+            </button>
+          </div>
+        </section>
+        <section id="settings-view" class="glass settings" hidden>
+          <h2 data-t="settings"></h2>
+          <label
+            ><span class="setting-copy"
+              ><span data-t="theme"></span
+              ><small data-t="themeHelp"></small></span
+            ><button id="settings-theme" class="quiet"></button></label
+          ><label
+            ><span class="setting-copy"
+              ><span data-t="language"></span
+              ><small data-t="languageHelp"></small></span
+            ><button id="settings-language" class="quiet">
+              Русский / English
+            </button></label
+          ><label
+            ><span class="setting-copy"
+              ><span data-t="compact"></span
+              ><small data-t="compactHelp"></small></span
+            ><input
+              id="compact"
+              class="compact-switch"
+              type="checkbox"
+              role="switch"
+          /></label>
+          <p data-t="localNote"></p>
+        </section>
+        <section id="stats-view" class="glass settings" hidden>
+          <h2 data-t="statistics"></h2>
+          <div id="details"></div>
+        </section>
+        <footer><span>STEPWISE</span></footer>
+      </main>
+    </div>
+    <div id="toast" role="status" hidden>
+      <span></span><button data-t="undo"></button>
+    </div>
+    <script defer src="ui.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="calendar.js"></script>
+    <script defer src="support.js"></script>
+    <script defer src="planner.js"></script>
+  </body>
+</html>
