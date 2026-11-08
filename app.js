@@ -12,8 +12,7 @@ const dictionary = {
     smallSteps: "Большое начинается с малого",
     robotText: "Я рядом. Просто сделай следующий шаг.",
     heading: "Каждый шаг имеет значение.",
-    subtitle:
-      "Все твои задачи: со сроком и без. «Сегодня» показывает только задачи со сроком на сегодня.",
+    subtitle: "Общий список, включая задачи без срока.",
     yourProgress: "Твой прогресс",
     total: "Всего задач",
     active: "Активные",
@@ -52,15 +51,12 @@ const dictionary = {
     cancel: "Отмена",
     deadline: "Срок выполнения",
     dueOptional: "Срок - необязательно",
-    dueHelp:
-      "Дата - срок выполнения задачи. Без даты задача останется только в общем списке.",
-    todayHelp: "Новая задача появится в «Сегодня» и в общем списке.",
+    dueHelp: "Без срока - только в общем списке.",
+    todayHelp: "Срок новой задачи - сегодня.",
     todayEmpty: "На сегодня задач нет",
-    todayEmptyText:
-      "Здесь задачи со сроком на сегодня. Добавь задачу ниже или назначь сегодняшний срок в общем списке.",
+    todayEmptyText: "Добавь задачу или назначь ей сегодняшний срок.",
     todayTitle: "Сфокусируйся на сегодня.",
-    todaySubtitle:
-      "Только задачи со сроком на сегодня. Задачи без срока ищи в разделе «Все задачи».",
+    todaySubtitle: "Задачи со сроком на сегодня.",
     statsTitle: "Твой путь в цифрах.",
     statsSubtitle: "Каждая выполненная задача - движение вперёд.",
     settingsTitle: "В твоём ритме.",
@@ -82,8 +78,7 @@ const dictionary = {
     smallSteps: "Great things start small",
     robotText: "I’m here. Just take the next step.",
     heading: "Every step counts.",
-    subtitle:
-      "Every task, with or without a due date. Today shows only tasks due today.",
+    subtitle: "Every task, including those without a due date.",
     yourProgress: "Your progress",
     total: "Total tasks",
     active: "Active",
@@ -121,15 +116,12 @@ const dictionary = {
     cancel: "Cancel",
     deadline: "Due date",
     dueOptional: "Due date - optional",
-    dueHelp:
-      "The date is the task deadline. Tasks without a date appear only in All tasks.",
-    todayHelp: "New tasks appear in Today and All tasks.",
+    dueHelp: "No due date? Find it in All tasks.",
+    todayHelp: "New tasks are due today.",
     todayEmpty: "Nothing due today",
-    todayEmptyText:
-      "Tasks due today appear here. Add one below or set today’s date on an existing task.",
+    todayEmptyText: "Add a task or set today’s date on an existing one.",
     todayTitle: "Make space for today.",
-    todaySubtitle:
-      "Only tasks due today. Find tasks without a due date in All tasks.",
+    todaySubtitle: "Tasks due today.",
     statsTitle: "Your journey in numbers.",
     statsSubtitle: "Every completed task is a step forward.",
     settingsTitle: "Find your rhythm.",
