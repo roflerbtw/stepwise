@@ -22,7 +22,7 @@ jobs:
       - name: Prepare website files
         run: |
           mkdir public
-          cp index.html style.css ui.js app.js calendar.js planner.js support.js favicon.svg public/
+          cp index.html style.css ui.js app.js calendar.js planner.js support.js favicon.svg sitemap.xml public/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
