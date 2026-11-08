@@ -927,18 +927,21 @@ html[data-theme="light"] .ambient {
   color: #585069;
 }
 html[data-theme="dark"] .theme-toggle {
-  background: #bbb0d8;
+  background: #211e2f;
+  border-color: #8d79bb45;
 }
 html[data-theme="dark"] .theme-thumb {
   transform: translateX(44px);
-  background: #30283f;
-  box-shadow: 0 2px 8px #21182f40;
+  background: #493b61;
+  box-shadow:
+    inset 0 1px 0 #ffffff12,
+    0 2px 8px #0004;
 }
 html[data-theme="dark"] .sun-icon {
-  color: #fff9ea;
+  color: #c4bbd4;
 }
 html[data-theme="dark"] .moon-icon {
-  color: #ddd0ff;
+  color: #f1eaff;
 }
 .companion svg {
   display: block;
